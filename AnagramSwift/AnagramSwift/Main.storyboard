@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AnagramSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FSn-Cn-ccz">
+                                <rect key="frame" x="252" y="45" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lP8-bt-sQF">
+                                <rect key="frame" x="252" y="107" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="lTa-rJ-YVz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAn-Ur-Kat">
+                                <rect key="frame" x="269" y="159" width="62" height="30"/>
+                                <state key="normal" title="Anagram"/>
+                                <connections>
+                                    <action selector="anagramButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NrB-5o-FjX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78u-Gp-Irf">
+                                <rect key="frame" x="276" y="197" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FSn-Cn-ccz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5dE-WI-fhI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="78u-Gp-Irf" secondAttribute="bottom" constant="382" id="GpE-W1-gdO"/>
+                            <constraint firstItem="78u-Gp-Irf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LQg-dD-7ov"/>
+                            <constraint firstItem="SAn-Ur-Kat" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OSb-Sq-ewC"/>
+                            <constraint firstItem="78u-Gp-Irf" firstAttribute="top" secondItem="SAn-Ur-Kat" secondAttribute="bottom" constant="8" symbolic="YES" id="VKc-Lo-POu"/>
+                            <constraint firstItem="lP8-bt-sQF" firstAttribute="leading" secondItem="FSn-Cn-ccz" secondAttribute="leading" id="b9s-M1-hK6"/>
+                            <constraint firstItem="lP8-bt-sQF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cg5-dr-g0u"/>
+                            <constraint firstItem="lP8-bt-sQF" firstAttribute="top" secondItem="FSn-Cn-ccz" secondAttribute="bottom" constant="32" id="iws-p2-fEW"/>
+                            <constraint firstItem="SAn-Ur-Kat" firstAttribute="top" secondItem="lP8-bt-sQF" secondAttribute="bottom" constant="22" id="sLf-aH-B5d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstStringTextFiled" destination="FSn-Cn-ccz" id="uYi-9J-1NG"/>
+                        <outlet property="resultLable" destination="78u-Gp-Irf" id="Rx0-rx-Kw4"/>
+                        <outlet property="secondStringTextFiled" destination="lP8-bt-sQF" id="bhb-r7-cV6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
