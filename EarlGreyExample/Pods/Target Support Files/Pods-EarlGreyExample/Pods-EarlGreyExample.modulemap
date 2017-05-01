@@ -1,0 +1,6 @@
+framework module Pods_EarlGreyExample {
+  umbrella header "Pods-EarlGreyExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
