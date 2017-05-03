@@ -2,27 +2,40 @@
 
 import UIKit
 
-var array = [5,3,4,6,8,2,9,1,7,10,11]
-var sortedArray = NSMutableArray(array: array)
-var sortedAboveIndex = array.count
+protocol Bird {
+    var name: String { get }
+    var canFly: Bool { get }
+}
 
-repeat {
-    var lastSwapIndex = 0
+protocol Flyable {
+    var airspeedVelocity: Double { get }
+}
+
+struct FlappyBird: Bird, Flyable {
+    let name: String
+    let flappyAmplitude: Double
+    let flappyFrequency: Double
+    let canFly = true
     
-    for i in 1..<sortedAboveIndex {
-        if (sortedArray[i - 1] as! Int) > (sortedArray[i] as! Int) {
-            sortedArray.exchangeObject(at: i, withObjectAt: i-1)
-            lastSwapIndex = i
-        }
+    var airspeedVelocity: Double {
+        return 3 * flappyFrequency * flappyAmplitude
     }
+}
+struct Penguin: Bird {
+    let name: String
+    let canFly = false
+}
+
+struct SwiftBird: Bird, Flyable {
+    var name: String { return "Swift \(version)" }
+    let version: Double
+    let canFly = true
     
-    sortedAboveIndex = lastSwapIndex
-    
-} while (sortedAboveIndex != 0)
+    // Swift is FASTER every version!
+    var airspeedVelocity: Double { return version * 1000.0 }
+}
 
-// [5, 3, 4, 6, 8, 2, 9, 1, 7, 10, 11]
-print(array)
-
-// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-print(sortedArray as Array)
-
+extension Bird {
+    // Flyable birds can fly!
+    var canFly: Bool { return self is Flyable }
+}
